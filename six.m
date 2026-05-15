@@ -75,4 +75,4 @@ if ~exist("output", "dir")
 end
 
 
-% imwrite(img_enhanced, fullfile("output", "Image6.jpg"))
+imwrite(imgProcessed, fullfile("output", "Image6.jpg"))

@@ -29,6 +29,7 @@ HSV(:,:,3) = V;
 
 i_final = hsv2rgb(HSV);
 i_brightened = imlocalbrighten(i_final);
+i_brightened = imbilatfilt(i_brightened, 0.01, 10);
 
 figure;
 
@@ -73,5 +74,4 @@ if ~exist("output", "dir")
     mkdir("output")    
 end
 
-
-% imwrite(img_enhanced, fullfile("output", "Image4.jpg"))
+imwrite(i_brightened, fullfile("output", "Image4.jpg"))

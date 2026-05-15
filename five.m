@@ -66,4 +66,4 @@ if ~exist("output", "dir")
 end
 
 
-% imwrite(img_enhanced, fullfile("output", "Image5.jpg"))
+imwrite(overlay, fullfile("output", "Image5.jpg"))

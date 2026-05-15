@@ -4,8 +4,6 @@ addpath("C:\Users\acer\Desktop\Matlab Final\Coursework Image Video");
 %% --------------------------------------------------------------------
 
 img = imread("Image1.jpg");
-imshow(img);
-title("Original Image");
 
 hsvImg =  rgb2hsv(img);
 % figure;
@@ -41,6 +39,10 @@ imgBrightAdjusted = imlocalbrighten(imgProcessed);
 img_enhanced = imbilatfilt(imgBrightAdjusted, 0.01, 10);
 img_enhanced = histeq(img_enhanced);
 figure;
+subplot(1,2,1);
+imshow(img);
+title("Original Image");
+subplot(1,2,2);
 imshow(imgBrightAdjusted);
 title("Brightness Noise Filtered");
 
