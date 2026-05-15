@@ -4,8 +4,6 @@ addpath("C:\Users\acer\Desktop\Matlab Final\Coursework Image Video");
 %% --------------------------------------------------------------------
 
 img = imread("Image2.JPG");
-imshow(img);
-title("Original Image");
 
 img = im2double(img);
 
@@ -22,7 +20,12 @@ enhanced = lab2rgb(lab);
 final = imbilatfilt(enhanced, 0.03, 5);
 
 figure;
+subplot(1,2,1);
+imshow(img);
+title("Original Image");
+subplot(1,2,2);
 imshow(final);
+title("Enhanced Image");
 
 % Histogram comparison
 figure;

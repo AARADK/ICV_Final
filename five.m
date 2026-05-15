@@ -4,12 +4,6 @@ addpath("C:\Users\acer\Desktop\Matlab Final\Coursework Image Video");
 %% --------------------------------------------------------------------
 
 img = imread("Image5.jpg");
-imshow(img);
-title("Original Image");
-
-figure;
-imshow(img);
-title('Original');
 
 grayimg = im2gray(img);
 
@@ -25,13 +19,17 @@ overlay(:,:,3) = overlay(:,:,3) .* ~BW;
 
 figure;
 
-subplot(1,2,1);
+subplot(1,3,1);
 imshow(BW);
 title("Roberts Edge Mask");
 
-subplot(1,2,2);
+subplot(1,3,2);
 imshow(overlay);
 title("Roberts Overlay");
+
+subplot(1,3,3);
+imshow(img);
+title("Original Image");
 
 
 % techs = ["sobel", "prewitt", "roberts", "log", "canny", "zerocross", "approxcanny"];

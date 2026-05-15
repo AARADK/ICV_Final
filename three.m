@@ -4,8 +4,6 @@ addpath("C:\Users\acer\Desktop\Matlab Final\Coursework Image Video");
 %% --------------------------------------------------------------------
 
 img = im2double(imread("Image3.bmp"));
-imshow(img);
-title("Original Image");
 
 disp(size(img));
 
@@ -18,17 +16,21 @@ figure;
 imshow(i_gauss);
 
 i_bil = imbilatfilt(img, 0.1, 10);
+
 figure;
+subplot(1,2,1);
+imshow(img);
+title("Original Image");
+subplot(1,2,2);
 imshow(i_bil);
+title("Denoised image");
 
 techs = ["sobel", "prewitt", "roberts", "log", "canny", "canny_old", "zerocross", "approxcanny"];
 
 for index = 1:size(techs, 2)
     BW = edge(i_bil, techs(index));
-    % Convert grayscale image to RGB
     rgb_img = repmat(i_bil, [1 1 3]);
 
-    % Create red overlay
     red = rgb_img(:,:,1);
     green = rgb_img(:,:,2);
     blue = rgb_img(:,:,3);
